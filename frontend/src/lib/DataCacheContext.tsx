@@ -43,9 +43,6 @@ export function DataCacheProvider({ children }: { children: ReactNode }) {
 
   const get = useCallback(
     async (url: string, ttlMs = DEFAULT_TTL): Promise<any> => {
-      // Guard: jangan fetch di server-side
-      if (typeof window === "undefined") return null;
-
       const fullUrl = url.startsWith("http") ? url : `${API}${url}`;
       const now = Date.now();
 
