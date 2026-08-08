@@ -327,7 +327,8 @@ export default function OccupationDetail() {
       suppressHydrationWarning
       style={{
         padding: "16px 14px",
-        maxWidth: 1360,
+        width: "100%",
+        maxWidth: "100%",
         background: C.bg,
         minHeight: "100vh",
       }}

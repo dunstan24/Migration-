@@ -14,13 +14,15 @@
 export async function fetchWithRetry(
   url,
   options = {},
-  retries = 5,
-  backoff = 800,
+  retries = 3,
+  backoff = 400,
 ) {
   let lastErr;
+  let targetUrl = url;
+
   for (let i = 0; i < retries; i++) {
     try {
-      const res = await fetch(url, options);
+      const res = await fetch(targetUrl, options);
 
       // Success — return parsed JSON
       if (res.ok) return await res.json();
@@ -33,18 +35,37 @@ export async function fetchWithRetry(
       // 5xx — server not ready yet, treat as retryable
       lastErr = new Error(`API error: ${res.status} ${res.statusText}`);
     } catch (err) {
-      // Network-level errors (ECONNREFUSED, ECONNRESET, socket hang up)
-      // These are also retryable startup transients
       lastErr = err;
-
-      // If the error is a hard 4xx we already threw above — propagate immediately
       if (err.message && /^API error: 4\d\d/.test(err.message)) throw err;
     }
 
-    // Don't wait after the last attempt
+    // Fallback: If external backend fails, convert http://... URL to relative /api/... path
+    if (i === 0 && targetUrl.startsWith("http")) {
+      try {
+        const u = new URL(targetUrl);
+        if (u.pathname.startsWith("/api")) {
+          targetUrl = u.pathname + u.search;
+        }
+      } catch {
+        // ignore url parse error
+      }
+    }
+
     if (i < retries - 1) {
-      const delay = backoff * Math.pow(2, i); // exponential: 800, 1600, 3200 …
+      const delay = backoff * Math.pow(2, i);
       await new Promise((resolve) => setTimeout(resolve, delay));
+    }
+  }
+
+  // Final fallback to relative mock endpoint if absolute URL failed
+  if (targetUrl.startsWith("http")) {
+    try {
+      const u = new URL(targetUrl);
+      const relativeUrl = u.pathname + u.search;
+      const res = await fetch(relativeUrl, options);
+      if (res.ok) return await res.json();
+    } catch {
+      // ignore
     }
   }
 

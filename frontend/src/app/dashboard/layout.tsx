@@ -24,16 +24,14 @@ const PREFETCH_URLS = [
  */
 function PrefetchOnMount() {
   const { prefetch } = useDataCache();
-  const [backendReady, setBackendReady] = useState<boolean | null>(null);
+  const [backendReady, setBackendReady] = useState<boolean | null>(true);
 
   useEffect(() => {
     let cancelled = false;
-    waitForBackend(180_000, 2_000).then((ready) => {
+    waitForBackend(10_000, 1_000).then((ready) => {
       if (cancelled) return;
       setBackendReady(ready);
-      if (ready) {
-        PREFETCH_URLS.forEach((url) => prefetch(url));
-      }
+      PREFETCH_URLS.forEach((url) => prefetch(url));
     });
     return () => { cancelled = true; };
   }, []);

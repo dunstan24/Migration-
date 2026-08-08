@@ -749,7 +749,8 @@ export default function ApprovalScorer() {
       suppressHydrationWarning
       style={{
         padding: "24px 28px",
-        maxWidth: 1400,
+        width: "100%",
+        maxWidth: "100%",
         background: C.bg,
         minHeight: "100vh",
       }}

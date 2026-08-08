@@ -70,7 +70,7 @@ export function ChartTip({ active, payload, label }: any) {
 
 export function PageWrapper({ title = "", sub, children }: { title?: string; sub?: string; children: React.ReactNode }) {
   return (
-    <div className="page-wrapper-root" style={{ padding: "28px 32px", maxWidth: 1440 }}>
+    <div className="page-wrapper-root" style={{ padding: "28px 32px", width: "100%", maxWidth: "100%" }}>
       <div style={{ marginBottom: 22 }}>
         <h1 style={{ fontSize: 18, fontWeight: 700, color: "var(--text)", marginBottom: 4 }}>{title}</h1>
         {sub && <p style={{ fontSize: 12, color: C.muted }}>{sub}</p>}
