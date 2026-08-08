@@ -1,0 +1,81 @@
+# ── Migration Intelligence Platform — Docker Compose ─────────
+# Architecture:
+#   Host Nginx (port 80/443) → Frontend (port 3100)
+#   Frontend internally rewrites /api/* → Backend (port 8000)
+#   Redis for caching (internal only)
+# ─────────────────────────────────────────────────────────────
+
+services:
+  # ── 1. Redis ────────────────────────────────────────────────
+  redis:
+    image: redis:7-alpine
+    container_name: mip_redis
+    restart: unless-stopped
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - internal
+
+  # ── 2. Backend (FastAPI) ────────────────────────────────────
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+    container_name: mip_backend
+    restart: unless-stopped
+    env_file:
+      - .env
+    environment:
+      - ENVIRONMENT=production
+      - REDIS_URL=redis://redis:6379/0
+    volumes:
+      - ./backend/data:/app/data
+    depends_on:
+      redis:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+    networks:
+      - internal
+
+  # ── 3. Frontend (Next.js) ───────────────────────────────────
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.frontend
+      args:
+        NEXT_PUBLIC_API_BASE_URL: http://backend:8000
+    container_name: mip_frontend
+    restart: unless-stopped
+    ports:
+      - "3100:3000" # Host Nginx proxies to this port
+    environment:
+      - NODE_ENV=production
+      - NEXT_PUBLIC_API_BASE_URL=http://backend:8000
+      - NEXTAUTH_URL=${NEXTAUTH_URL}
+      - NEXTAUTH_SECRET=${NEXTAUTH_SECRET}
+      - GOOGLE_CLIENT_ID=${GOOGLE_CLIENT_ID}
+      - GOOGLE_CLIENT_SECRET=${GOOGLE_CLIENT_SECRET}
+    depends_on:
+      backend:
+        condition: service_healthy
+    networks:
+      - internal
+
+# ── Volumes ─────────────────────────────────────────────────
+volumes:
+  redis_data:
+
+    # ── Networks ────────────────────────────────────────────────
+networks:
+  internal:
+    driver: bridge

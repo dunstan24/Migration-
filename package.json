@@ -1,0 +1,29 @@
+{
+  "name": "migration-intelligence-platform",
+  "version": "1.0.0",
+  "description": "> Full-stack ML prediction platform with RAG-powered chat, built on React + FastAPI",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npm run dev --prefix frontend",
+    "setup": "node scripts/setup-env.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dunstan24/Migration-Intelligence-Platform.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/dunstan24/Migration-Intelligence-Platform/issues"
+  },
+  "homepage": "https://github.com/dunstan24/Migration-Intelligence-Platform#readme",
+  "dependencies": {
+    "html-pdf-node": "^1.0.8",
+    "pdf-lib": "^1.17.1",
+    "pptxgenjs": "^4.0.1",
+    "puppeteer": "^24.40.0"
+  }
+}

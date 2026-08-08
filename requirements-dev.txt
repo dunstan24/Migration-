@@ -1,0 +1,25 @@
+# ════════════════════════════════════════════════════════════
+# Migration Intelligence Platform — Development Dependencies
+# Python 3.9+ | Updated: April 2026
+# ════════════════════════════════════════════════════════════
+
+# Include base requirements
+-r requirements.txt
+
+# ── Testing & Code Quality ───────────────────────────────────
+pytest
+pytest-asyncio
+pytest-cov
+black
+flake8
+pylint
+mypy
+
+# ── Development Tools ────────────────────────────────────────
+ipython
+jupyter
+ipdb
+
+# ── Documentation ────────────────────────────────────────────
+# sphinx
+# sphinx-rtd-theme

@@ -1,0 +1,132 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #f3f4f6;
+  --surface: #ffffff;
+  --surface-alt: #f8fafc;
+  --border: #e5e7eb;
+  --text: #111827;
+  --muted: #4b5563;
+  --dimmed: #6b7280;
+  --hover: rgba(0, 0, 0, 0.04);
+}
+
+.dark {
+  --bg: #030712;
+  --surface: #111827;
+  --surface-alt: #0f172a;
+  --border: #1f2937;
+  --text: #f9fafb;
+  --muted: #9ca3af;
+  --dimmed: #6b7280;
+  --hover: rgba(255, 255, 255, 0.04);
+}
+
+/* Mobile responsive utilities for TopNav */
+@media (max-width: 900px) {
+  .nav-links-desktop { display: none !important; }
+  .nav-mobile-toggle { display: block !important; }
+  .nav-user-text { display: none !important; }
+  .nav-live-badge, .nav-row-count { display: none !important; }
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { 
+  background-color: var(--bg);
+  color: var(--text);
+}
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+}
+input[type="range"]::-webkit-slider-runnable-track {
+  background: var(--border);
+  height: 6px;
+  border-radius: 3px;
+}
+input[type="range"]::-moz-range-track {
+  background: var(--border);
+  height: 6px;
+  border-radius: 3px;
+}
+
+/* Fix for Slider Thumb positioning and appearance */
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  background: #2563eb; 
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+  /* Centering: (6px track / 2) - (16px thumb / 2) = -5px */
+  margin-top: -5px; 
+  transition: transform 0.1s ease, background-color 0.1s ease;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  background: #1d4ed8;
+  transform: scale(1.1);
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  background: #2563eb;
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+  transition: transform 0.1s ease, background-color 0.1s ease;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+input[type="range"]::-moz-range-thumb:hover {
+  background: #1d4ed8;
+  transform: scale(1.1);
+}
+
+/* ── SweetAlert2 Theme Overrides ─────────────────────────── */
+.dark .swal2-popup {
+  background: var(--surface) !important;
+  color: var(--text) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 12px !important;
+}
+
+.dark .swal2-title {
+  color: var(--text) !important;
+}
+
+.dark .swal2-html-container {
+  color: var(--muted) !important;
+}
+
+.dark .swal2-confirm {
+  background-color: #3b82f6 !important;
+  color: #ffffff !important;
+  border-radius: 8px !important;
+}
+
+.dark .swal2-cancel {
+  background-color: var(--surface-alt) !important;
+  color: var(--text) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 8px !important;
+}
+
+/* Mobile padding adjustments */
+@media (max-width: 600px) {
+  .dashboard-wrapper,
+  .page-wrapper-root {
+    padding: 16px 14px !important;
+  }
+}

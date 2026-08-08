@@ -1,0 +1,82 @@
+# ════════════════════════════════════════════════════════════
+# Migration Intelligence Platform — Backend Dependencies
+# Python 3.9+ | Updated: April 2026
+# ════════════════════════════════════════════════════════════
+
+# ── Web Framework ────────────────────────────────────────────
+fastapi
+uvicorn[standard]
+python-multipart
+httpx
+
+# ── Configuration & Validation ───────────────────────────────
+pydantic
+pydantic-settings
+python-dotenv
+
+# ── Authentication & Security ────────────────────────────────
+PyJWT
+bcrypt
+slowapi
+
+# ── Database ──────────────────────────────────────────────────
+sqlalchemy
+aiosqlite
+pymysql
+aiomysql
+alembic
+
+# ── Caching ───────────────────────────────────────────────────
+redis
+
+# ── Data Processing ──────────────────────────────────────────
+pandas
+numpy
+openpyxl
+rapidfuzz
+
+# ── Machine Learning ─────────────────────────────────────────
+scikit-learn
+xgboost
+prophet
+shap
+joblib
+
+# ── LLM Integration (Google Gemini) ───────────────────────────
+google-genai
+
+# ── RAG (Vector Database & Embeddings) ────────────────────────
+chromadb
+sentence-transformers
+
+# ── Logging & Monitoring ─────────────────────────────────────
+python-json-logger
+google-cloud-storage
+sentry-sdk[fastapi]
+
+# ── Scheduled Tasks ──────────────────────────────────────────
+apscheduler
+
+# ── Development/Production Servers ───────────────────────────
+gunicorn
+
+# ════════════════════════════════════════════════════════════
+# Optional Packages (uncomment when needed)
+# ════════════════════════════════════════════════════════════
+
+# ── Reports (PDF/PowerPoint Generation) ──────────────────────
+# python-pptx
+# weasyprint
+# jinja2
+# reportlab
+
+# ── Task Queue ─────────────────────────────────────────────
+# celery
+# redis
+
+# ── Cache Redis Backend ──────────────────────────────────────
+# aioredis
+
+# ── Deep Learning (GPU support - install separately) ─────────
+# torch
+# keras

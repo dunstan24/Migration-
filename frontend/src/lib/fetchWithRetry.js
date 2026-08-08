@@ -1,0 +1,75 @@
+/**
+ * fetchWithRetry — fetch with automatic retry on BOTH network errors AND 5xx responses.
+ *
+ * Why 5xx retries? At startup the backend takes ~30s-3min to load ML models and
+ * initialise Chroma RAG. During that window uvicorn may drop connections or return
+ * 500/502/503. Retrying with exponential back-off lets the request self-heal once
+ * the server is ready instead of surfacing a hard error to the user.
+ *
+ * @param {string}  url
+ * @param {object}  options   - fetch options (method, headers, body …)
+ * @param {number}  retries   - total attempts (default 5)
+ * @param {number}  backoff   - base delay ms (doubles each attempt, default 800ms)
+ */
+export async function fetchWithRetry(
+  url,
+  options = {},
+  retries = 5,
+  backoff = 800,
+) {
+  let lastErr;
+  for (let i = 0; i < retries; i++) {
+    try {
+      const res = await fetch(url, options);
+
+      // Success — return parsed JSON
+      if (res.ok) return await res.json();
+
+      // 4xx errors are definitive (bad request / auth) — don't retry
+      if (res.status >= 400 && res.status < 500) {
+        throw new Error(`API error: ${res.status} ${res.statusText}`);
+      }
+
+      // 5xx — server not ready yet, treat as retryable
+      lastErr = new Error(`API error: ${res.status} ${res.statusText}`);
+    } catch (err) {
+      // Network-level errors (ECONNREFUSED, ECONNRESET, socket hang up)
+      // These are also retryable startup transients
+      lastErr = err;
+
+      // If the error is a hard 4xx we already threw above — propagate immediately
+      if (err.message && /^API error: 4\d\d/.test(err.message)) throw err;
+    }
+
+    // Don't wait after the last attempt
+    if (i < retries - 1) {
+      const delay = backoff * Math.pow(2, i); // exponential: 800, 1600, 3200 …
+      await new Promise((resolve) => setTimeout(resolve, delay));
+    }
+  }
+
+  throw lastErr;
+}
+
+/**
+ * waitForBackend — polls /health until the server responds 200.
+ * Call this before making any data requests at startup.
+ *
+ * @param {number} timeoutMs   - give up after this many ms  (default 3 min)
+ * @param {number} intervalMs  - polling interval             (default 2 s)
+ * @returns {Promise<boolean>} true = ready, false = timed out
+ */
+export async function waitForBackend(timeoutMs = 180_000, intervalMs = 2_000) {
+  const deadline = Date.now() + timeoutMs;
+  while (Date.now() < deadline) {
+    try {
+      const res = await fetch("/api/data/health", { method: "GET" });
+      if (res.ok) return true;
+    } catch {
+      // still not up — keep polling
+    }
+    await new Promise((r) => setTimeout(r, intervalMs));
+  }
+  return false; // timed out — let callers decide what to show
+}
+

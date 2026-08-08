@@ -1,0 +1,485 @@
+,occupation
+0,121111 Aquaculture Farmer
+1,121211 Cotton Grower
+2,121212 Flower Grower
+3,121213 Fruit or Nut Grower
+4,"121214 Grain, Oilseed or Pasture Grower"
+5,121215 Grape Grower
+6,121216 Mixed Crop Farmer
+7,121217 Sugar Cane Grower
+8,121221 Vegetable Grower
+9,121299 Crop Farmers nec
+10,121311 Apiarist
+11,121312 Beef Cattle Farmer
+12,121313 Dairy Cattle Farmer
+13,121316 Horse Breeder
+14,121317 Mixed Livestock Farmer
+15,121321 Poultry Farmer
+16,121399 Livestock Farmers nec
+17,121411 Mixed Crop and Livestock Farmer
+18,131112 Sales and Marketing Manager
+19,131113 Advertising Manager
+20,131114 Public Relations Manager
+21,132111 Corporate Services Manager
+22,132211 Finance Manager
+23,132311 Human Resource Manager
+24,132411 Policy and Planning Manager
+25,132511 Research and Development Manager
+26,133111 Construction Project Manager
+27,133112 Project Builder
+28,133211 Engineering Manager
+29,133411 Manufacturer
+30,133511 Production Manager (Forestry)
+31,133512 Production Manager (Manufacturing)
+32,133513 Production Manager (Mining)
+33,133611 Supply and Distribution Manager
+34,133612 Procurement Manager
+35,134111 Child Care Centre Manager
+36,134211 Medical Administrator
+37,134212 Nursing Clinical Director
+38,134213 Primary Health Organisation Manager
+39,134214 Welfare Centre Manager
+40,134299 Health and Welfare Services Managers nec
+41,134311 School Principal
+42,134412 Regional Education Manager
+43,134499 Education Managers nec
+44,135112 ICT Project Manager
+45,135199 ICT Managers nec
+46,139911 Arts Administrator or Manager
+47,139912 Environmental Manager
+48,139913 Laboratory Manager
+49,139914 Quality Assurance Manager
+50,139915 Sports Administrator
+51,139999 Specialist Managers nec
+52,141111 Cafe or Restaurant Manager
+53,141211 Caravan Park and Camping Ground Manager
+54,141311 Hotel or Motel Manager
+55,141999 Accommodation and Hospitality Managers nec
+56,142115 Post Office Manager
+57,149111 Amusement Centre Manager
+58,149112 Fitness Centre Manager
+59,149113 Sports Centre Manager
+60,149212 Customer Service Manager
+61,149311 Conference and Event Organiser
+62,149413 Transport Company Manager
+63,149913 Facilities Manager
+64,149914 Financial Institution Branch Manager
+65,211112 Dancer or Choreographer
+66,211212 Music Director
+67,211213 Musician (Instrumental)
+68,211299 Music Professionals nec
+69,211311 Photographer
+70,212111 Artistic Director
+71,212212 Book or Script Editor
+72,"212312 Director (Film, Television, Radio or Stage)"
+73,212314 Film and Video Editor
+74,212315 Program Director (Television or Radio)
+75,212316 Stage Manager
+76,212317 Technical Director
+77,212318 Video Producer
+78,212411 Copywriter
+79,212412 Newspaper or Periodical Editor
+80,212413 Print Journalist
+81,212415 Technical Writer
+82,212416 Television Journalist
+83,212499 Journalists and Other Writers nec
+84,221111 Accountant (General)
+85,221112 Management Accountant
+86,221113 Taxation Accountant
+87,221211 Company Secretary
+88,221213 External Auditor
+89,221214 Internal Auditor
+90,222111 Commodities Trader
+91,222112 Finance Broker
+92,222113 Insurance Broker
+93,222199 Financial Brokers nec
+94,222211 Financial Market Dealer
+95,222213 Stockbroking Dealer
+96,222299 Financial Dealers nec
+97,222311 Financial Investment Adviser
+98,222312 Financial Investment Manager
+99,223111 Human Resource Adviser
+100,223112 Recruitment Consultant
+101,223113 Workplace Relations Adviser
+102,223211 ICT Trainer
+103,224111 Actuary
+104,224112 Mathematician
+105,224113 Statistician
+106,224212 Gallery or Museum Curator
+107,224213 Health Information Manager
+108,224214 Records Manager
+109,224311 Economist
+110,224412 Policy Analyst
+111,224511 Land Economist
+112,224512 Valuer
+113,224611 Librarian
+114,224711 Management Consultant
+115,224712 Organisation and Methods Analyst
+116,224912 Liaison Officer
+117,224914 Patents Examiner
+118,224999 Information and Organisation Professionals nec
+119,225111 Advertising Specialist
+120,225112 Market Research Analyst
+121,225113 Marketing Specialist
+122,225211 ICT Account Manager
+123,225212 ICT Business Development Manager
+124,225213 ICT Sales Representative
+125,225311 Public Relations Professional
+126,225499 Technical Sales Representatives nec
+127,231111 Aeroplane Pilot
+128,231113 Flying Instructor
+129,231213 Ship's Master
+130,232111 Architect
+131,232112 Landscape Architect
+132,232212 Surveyor
+133,232213 Cartographer
+134,232214 Other Spatial Scientist
+135,232311 Fashion Designer
+136,232312 Industrial Designer
+137,232313 Jewellery Designer
+138,232411 Graphic Designer
+139,232412 Illustrator
+140,232413 Multimedia Designer
+141,232414 Web Designer
+142,232511 Interior Designer
+143,232611 Urban and Regional Planner
+144,233111 Chemical Engineer
+145,233112 Materials Engineer
+146,233211 Civil Engineer
+147,233212 Geotechnical Engineer
+148,233213 Quantity Surveyor
+149,233214 Structural Engineer
+150,233215 Transport Engineer
+151,233311 Electrical Engineer
+152,233411 Electronics Engineer
+153,233511 Industrial Engineer
+154,233512 Mechanical Engineer
+155,233513 Production or Plant Engineer
+156,233611 Mining Engineer (excluding Petroleum)
+157,233612 Petroleum Engineer
+158,233911 Aeronautical Engineer
+159,233912 Agricultural Engineer
+160,233913 Biomedical Engineer
+161,233914 Engineering Technologist
+162,233915 Environmental Engineer
+163,233916 Naval Architect
+164,233999 Engineering Professionals nec
+165,234111 Agricultural Consultant
+166,234112 Agricultural Scientist
+167,234113 Forester
+168,234211 Chemist
+169,234212 Food Technologist
+170,234213 Wine Maker
+171,234311 Conservation Officer
+172,234312 Environmental Consultant
+173,234313 Environmental Research Scientist
+174,234399 Environmental Scientists nec
+175,234411 Geologist
+176,234412 Geophysicist
+177,234413 Hydrogeologist
+178,234511 Life Scientist (General)
+179,234513 Biochemist
+180,234514 Biotechnologist
+181,234515 Botanist
+182,234516 Marine Biologist
+183,234517 Microbiologist
+184,234518 Zoologist
+185,234599 Life Scientists nec
+186,234611 Medical Laboratory Scientist
+187,234711 Veterinarian
+188,234911 Conservator
+189,234912 Metallurgist
+190,234913 Meteorologist
+191,234914 Physicist
+192,234915 Exercise Physiologist
+193,234999 Natural and Physical Science Professionals nec
+194,241111 Early Childhood (Pre-primary School) Teacher
+195,241213 Primary School Teacher
+196,241311 Middle School Teacher
+197,241411 Secondary School Teacher
+198,241511 Special Needs Teacher
+199,241512 Teacher of the Hearing Impaired
+200,241513 Teacher of the Sight Impaired
+201,241599 Special Education Teachers nec
+202,242111 University Lecturer
+203,242211 Vocational Education Teacher
+204,249111 Education Adviser
+205,249211 Art Teacher (Private Tuition)
+206,249212 Dance Teacher (Private Tuition)
+207,249214 Music Teacher (Private Tuition)
+208,249299 Private Tutors and Teachers nec
+209,249311 Teacher of English to Speakers of Other Languages
+210,251111 Dietitian
+211,251112 Nutritionist
+212,251211 Medical Diagnostic Radiographer
+213,251212 Medical Radiation Therapist
+214,251213 Nuclear Medicine Technologist
+215,251214 Sonographer
+216,251311 Environmental Health Officer
+217,251312 Occupational Health and Safety Adviser
+218,251411 Optometrist
+219,251412 Orthoptist
+220,251511 Hospital Pharmacist
+221,251512 Industrial Pharmacist
+222,251513 Retail Pharmacist
+223,251911 Health Promotion Officer
+224,251912 Orthotist or Prosthetist
+225,251999 Health Diagnostic and Promotion Professionals nec
+226,252111 Chiropractor
+227,252112 Osteopath
+228,252211 Acupuncturist
+229,252213 Naturopath
+230,252214 Traditional Chinese Medicine Practitioner
+231,252299 Complementary Health Therapists nec
+232,252311 Dental Specialist
+233,252312 Dentist
+234,252411 Occupational Therapist
+235,252511 Physiotherapist
+236,252611 Podiatrist
+237,252711 Audiologist
+238,252712 Speech Pathologist
+239,253111 General Practitioner
+240,253112 Resident Medical Officer
+241,253211 Anaesthetist
+242,253311 Specialist Physician (General Medicine)
+243,253312 Cardiologist
+244,253313 Clinical Haematologist
+245,253314 Medical Oncologist
+246,253315 Endocrinologist
+247,253316 Gastroenterologist
+248,253317 Intensive Care Specialist
+249,253318 Neurologist
+250,253321 Paediatrician
+251,253322 Renal Medicine Specialist
+252,253324 Thoracic Medicine Specialist
+253,253399 Specialist Physicians nec
+254,253411 Psychiatrist
+255,253511 Surgeon (General)
+256,253512 Cardiothoracic Surgeon
+257,253513 Neurosurgeon
+258,253514 Orthopaedic Surgeon
+259,253516 Paediatric Surgeon
+260,253517 Plastic and Reconstructive Surgeon
+261,253518 Urologist
+262,253521 Vascular Surgeon
+263,253911 Dermatologist
+264,253912 Emergency Medicine Specialist
+265,253913 Obstetrician and Gynaecologist
+266,253914 Ophthalmologist
+267,253915 Pathologist
+268,253917 Diagnostic and Interventional Radiologist
+269,253918 Radiation Oncologist
+270,253999 Medical Practitioners nec
+271,254111 Midwife
+272,254211 Nurse Educator
+273,254212 Nurse Researcher
+274,254311 Nurse Manager
+275,254411 Nurse Practitioner
+276,254412 Registered Nurse (Aged Care)
+277,254413 Registered Nurse (Child and Family Health)
+278,254414 Registered Nurse (Community Health)
+279,254415 Registered Nurse (Critical Care and Emergency)
+280,254416 Registered Nurse (Developmental Disability)
+281,254417 Registered Nurse (Disability and Rehabilitation)
+282,254418 Registered Nurse (Medical)
+283,254421 Registered Nurse (Medical Practice)
+284,254422 Registered Nurse (Mental Health)
+285,254423 Registered Nurse (Perioperative)
+286,254424 Registered Nurse (Surgical)
+287,254425 Registered Nurse (Paediatrics)
+288,254499 Registered Nurses nec
+289,261111 ICT Business Analyst
+290,261112 Systems Analyst
+291,261211 Multimedia Specialist
+292,261212 Web Developer
+293,261311 Analyst Programmer
+294,261312 Developer Programmer
+295,261313 Software Engineer
+296,261314 Software Tester
+297,261399 Software and Applications Programmers nec
+298,262111 Database Administrator
+299,262112 ICT Security Specialist
+300,262113 Systems Administrator
+301,263111 Computer Network and Systems Engineer
+302,263112 Network Administrator
+303,263113 Network Analyst
+304,263211 ICT Quality Assurance Engineer
+305,263212 ICT Support Engineer
+306,263213 ICT Systems Test Engineer
+307,263299 ICT Support and Test Engineers nec
+308,263311 Telecommunications Engineer
+309,263312 Telecommunications Network Engineer
+310,271111 Barrister
+311,271214 Intellectual Property Lawyer
+312,271299 Judicial and Other Legal Professionals nec
+313,271311 Solicitor
+314,272111 Careers Counsellor
+315,272112 Drug and Alcohol Counsellor
+316,272113 Family and Marriage Counsellor
+317,272114 Rehabilitation Counsellor
+318,272115 Student Counsellor
+319,272199 Counsellors nec
+320,272311 Clinical Psychologist
+321,272312 Educational Psychologist
+322,272313 Organisational Psychologist
+323,272314 Psychotherapist
+324,272399 Psychologists nec
+325,272412 Interpreter
+326,272413 Translator
+327,272499 Social Professionals nec
+328,272511 Social Worker
+329,272611 Community Arts Worker
+330,272612 Recreation Officer
+331,272613 Welfare Worker
+332,311111 Agricultural Technician
+333,311211 Anaesthetic Technician
+334,311212 Cardiac Technician
+335,311213 Medical Laboratory Technician
+336,311214 Operating Theatre Technician
+337,311215 Pharmacy Technician
+338,311216 Pathology Collector
+339,311299 Medical Technicians nec
+340,311312 Meat Inspector
+341,311399 Primary Products Inspectors nec
+342,311411 Chemistry Technician
+343,311412 Earth Science Technician
+344,311413 Life Science Technician
+345,311499 Science Technicians nec
+346,312111 Architectural Draftsperson
+347,312113 Building Inspector
+348,312114 Construction Estimator
+349,312116 Surveying or Spatial Science Technician
+350,"312199 Architectural, Building and Surveying Technicians nec"
+351,312211 Civil Engineering Draftsperson
+352,312212 Civil Engineering Technician
+353,312311 Electrical Engineering Draftsperson
+354,312312 Electrical Engineering Technician
+355,312511 Mechanical Engineering Draftsperson
+356,312512 Mechanical Engineering Technician
+357,312611 Safety Inspector
+358,312911 Maintenance Planner
+359,312912 Metallurgical or Materials Technician
+360,312913 Mine Deputy
+361,312999 Building and Engineering Technicians nec
+362,313111 Hardware Technician
+363,313112 ICT Customer Support Officer
+364,313113 Web Administrator
+365,313199 ICT Support Technicians nec
+366,313211 Radiocommunications Technician
+367,313212 Telecommunications Field Engineer
+368,313213 Telecommunications Network Planner
+369,313214 Telecommunications Technical Officer or Technologist
+370,321111 Automotive Electrician
+371,321211 Motor Mechanic (General)
+372,321212 Diesel Motor Mechanic
+373,321213 Motorcycle Mechanic
+374,321214 Small Engine Mechanic
+375,322113 Farrier
+376,322211 Sheetmetal Trades Worker
+377,322311 Metal Fabricator
+378,322313 Welder (First Class)
+379,323111 Aircraft Maintenance Engineer (Avionics)
+380,323112 Aircraft Maintenance Engineer (Mechanical)
+381,323113 Aircraft Maintenance Engineer (Structures)
+382,323211 Fitter (General)
+383,323212 Fitter and Turner
+384,323213 Fitter-Welder
+385,323214 Metal Machinist (First Class)
+386,323313 Locksmith
+387,323412 Toolmaker
+388,324111 Panelbeater
+389,324311 Vehicle Painter
+390,331111 Bricklayer
+391,331112 Stonemason
+392,331211 Carpenter and Joiner
+393,331212 Carpenter
+394,331213 Joiner
+395,332111 Floor Finisher
+396,332211 Painting Trades Worker
+397,333111 Glazier
+398,333211 Fibrous Plasterer
+399,333212 Solid Plasterer
+400,333311 Roof Tiler
+401,333411 Wall and Floor Tiler
+402,334111 Plumber (General)
+403,334112 Airconditioning and Mechanical Services Plumber
+404,334113 Drainer
+405,334114 Gasfitter
+406,334115 Roof Plumber
+407,341111 Electrician (General)
+408,341112 Electrician (Special Class)
+409,341113 Lift Mechanic
+410,342111 Airconditioning and Refrigeration Mechanic
+411,342211 Electrical Linesworker
+412,342212 Technical Cable Jointer
+413,342311 Business Machine Mechanic
+414,342313 Electronic Equipment Trades Worker
+415,342314 Electronic Instrument Trades Worker (General)
+416,342315 Electronic Instrument Trades Worker (Special Class)
+417,342411 Cabler (Data and Telecommunications)
+418,342413 Telecommunications Linesworker
+419,351111 Baker
+420,351112 Pastrycook
+421,351211 Butcher or Smallgoods Maker
+422,351311 Chef
+423,351411 Cook
+424,361111 Dog Handler or Trainer
+425,361112 Horse Trainer
+426,361114 Zookeeper
+427,361199 Animal Attendants and Trainers nec
+428,361311 Veterinary Nurse
+429,362111 Florist
+430,362211 Gardener (General)
+431,362212 Arborist
+432,362213 Landscape Gardener
+433,362311 Greenkeeper
+434,362411 Nurseryperson
+435,391111 Hairdresser
+436,392111 Print Finisher
+437,392311 Printing Machinist
+438,393213 Dressmaker or Tailor
+439,394111 Cabinetmaker
+440,394213 Wood Machinist
+441,399111 Boat Builder and Repairer
+442,399112 Shipwright
+443,399212 Gas or Petroleum Operator
+444,399213 Power Generation Plant Operator
+445,"399512 Camera Operator (Film, Television or Video)"
+446,399514 Make Up Artist
+447,399516 Sound Technician
+448,399599 Performing Arts Technicians nec
+449,411111 Ambulance Officer
+450,411112 Intensive Care Ambulance Paramedic
+451,411211 Dental Hygienist
+452,411213 Dental Technician
+453,411214 Dental Therapist
+454,411311 Diversional Therapist
+455,411411 Enrolled Nurse
+456,411611 Massage Therapist
+457,411711 Community Worker
+458,411712 Disabilities Services Officer
+459,411713 Family Support Worker
+460,411715 Residential Care Officer
+461,411716 Youth Worker
+462,441211 Emergency Service Worker
+463,451211 Driving Instructor
+464,451711 Flight Attendant
+465,451815 First Aid Trainer
+466,452311 Diving Instructor (Open Water)
+467,452312 Gymnastics Coach or Instructor
+468,452313 Horse Riding Coach or Instructor
+469,452314 Snowsport Instructor
+470,452315 Swimming Coach or Instructor
+471,452316 Tennis Coach
+472,452317 Other Sports Coach or Instructor
+473,452321 Sports Development Officer
+474,452413 Jockey
+475,452499 Sportspersons nec
+476,511111 Contract Administrator
+477,511112 Program or Project Administrator
+478,599612 Insurance Loss Adjuster
+479,599915 Clinical Coder
+480,611211 Insurance Agent
+481,612112 Property Manager
+482,612115 Real Estate Representative
+483,639211 Retail Buyer

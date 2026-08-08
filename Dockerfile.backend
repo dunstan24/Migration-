@@ -1,0 +1,70 @@
+# ── Dockerfile.backend ───────────────────────────────────────
+# FastAPI + ML models (optimized multi-stage build)
+# Build context: project root
+# ─────────────────────────────────────────────────────────────
+
+# ── Stage 1: Build dependencies ─────────────────────────────
+FROM python:3.11-slim AS builder
+
+# Build tools needed to compile C extensions (scipy, bcrypt, etc.)
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    gcc g++ \
+    && rm -rf /var/lib/apt/lists/*
+
+# Use a virtual environment for clean separation
+RUN python -m venv /opt/venv
+ENV PATH="/opt/venv/bin:$PATH"
+
+COPY requirements.txt .
+
+# Install CPU-only PyTorch FIRST (saves ~1.5 GB vs CUDA version)
+RUN pip install --no-cache-dir --upgrade pip \
+    && pip install --no-cache-dir torch --index-url https://download.pytorch.org/whl/cpu \
+    && pip install --no-cache-dir -r requirements.txt
+
+# ── Stage 2: Production runtime ─────────────────────────────
+FROM python:3.11-slim
+
+# Only runtime dependencies (curl for health checks)
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    curl \
+    && rm -rf /var/lib/apt/lists/*
+
+# Copy the virtual environment from builder (no gcc/g++ in final image)
+COPY --from=builder /opt/venv /opt/venv
+ENV PATH="/opt/venv/bin:$PATH"
+
+# Create non-root user for security
+RUN groupadd --gid 1000 appuser \
+    && useradd --uid 1000 --gid appuser --shell /bin/bash --create-home appuser
+
+WORKDIR /app
+
+# Copy application code
+COPY backend/ .
+COPY generate_report.js .
+COPY package.json .
+
+# Install Node.js and Chromium for Puppeteer (PDF generation)
+USER root
+ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true \
+    PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    nodejs npm chromium fonts-liberation \
+    && rm -rf /var/lib/apt/lists/* \
+    && npm install puppeteer pdf-lib
+
+# Ensure data directories exist (actual data mounted as volume)
+RUN mkdir -p data/processed data/reports data/embeddings data/chroma data/raw \
+    && chown -R appuser:appuser /app
+
+# Switch back to non-root user
+USER appuser
+
+EXPOSE 8000
+
+# Single worker to prevent OOM on 8 GB RAM VPS
+# (each worker loads PyTorch + ML models separately ~3-4 GB)
+# --timeout-keep-alive 120: prevent ECONNRESET from Next.js proxy reusing closed connections
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000", "--workers", "4", "--timeout-keep-alive", "120"]

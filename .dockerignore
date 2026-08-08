@@ -1,0 +1,60 @@
+# ══════════════════════════════════════════════════════════════
+# Migration Intelligence Platform — Docker Build Exclusions
+# Prevents unnecessary files from entering the Docker build context
+# ══════════════════════════════════════════════════════════════
+
+# ── Git ──────────────────────────────────────────────────────
+.git
+.gitignore
+
+# ── Environment files (secrets must NOT be baked into images) ─
+.env
+.env.*
+backend/.env
+frontend/.env
+
+# ── Python ───────────────────────────────────────────────────
+.venv/
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+backend/__pycache__/
+backend/**/__pycache__/
+
+# ── Node.js ──────────────────────────────────────────────────
+frontend/node_modules/
+frontend/.next/
+
+# ── Data files (mounted as volumes, not built into image) ────
+backend/data/
+*.db
+*.db-shm
+*.db-wal
+
+# ── Temporary / Generated ───────────────────────────────────
+tmp/
+*.log
+.DS_Store
+Thumbs.db
+
+# ── Documentation (not needed in containers) ─────────────────
+Documentation/
+*.md
+!frontend/README.md
+
+# ── Docker files (prevent recursive context) ─────────────────
+docker-compose.yml
+docker-compose*.yml
+
+# ── IDE / Editor ─────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ── ML notebook ─────────────────────────────────────────────
+*.ipynb
+test.ipynb
+ml-model/

@@ -1,0 +1,18 @@
+# ════════════════════════════════════════════════════════════
+# Migration Intelligence Platform — Production Dependencies
+# Python 3.9+ | Updated: April 2026
+# For Railway/Heroku/Cloud Deployment
+# ════════════════════════════════════════════════════════════
+
+# Include base requirements
+-r requirements.txt
+
+# ── Production Server ────────────────────────────────────────
+gunicorn
+whitenoise  # Static file serving
+
+# ── Production Monitoring ────────────────────────────────────
+sentry-sdk  # Error tracking
+
+# ── Production Cache (optional) ──────────────────────────────
+# redis  # Uncomment if using Redis
